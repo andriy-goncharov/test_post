@@ -59,6 +59,7 @@ public class Main {
                 resRBL.append("/");
                 resRBL.append(test4);
             }
+
             System.out.println(resRBL);
             write.writeData(resRBL.toString());
             resRBL.delete(0,resRBL.length());
