@@ -15,7 +15,7 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         List_IP mailservers = new List_IP();
         WriteToFile write = new WriteToFile();
-        driver.get(mailservers.getnextIPscore());
+        driver.get(mailservers.getnextIPscore(0));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         WebElement cucies = driver.findElement(By.cssSelector("#onetrust-close-btn-container"));
         cucies.click();
@@ -24,7 +24,7 @@ public class Main {
         write.writeData(digit.getText());
 
         for (int i = 1; i < mailservers.score_mail.size()  ; i++) {
-            driver.get(mailservers.getnextIPscore());
+            driver.get(mailservers.getnextIPscore(i));
             digit = driver.findElement(By.cssSelector(".ss-score .ss-score__num"));
             System.out.println( digit.getText());
             write.writeData(digit.getText());
@@ -37,7 +37,7 @@ public class Main {
         StringBuilder resRBL = new StringBuilder();
         int test2, test3, test4;
         for (int i = 0; i < mailservers.multirbl_mail.size(); i++) {
-            driver.get(mailservers.getnextIPmultirbl());
+            driver.get(mailservers.getnextIPmultirbl(i));
             WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(100));
             driverWait.until(ExpectedConditions.textToBe(By.cssSelector(".global_data_processing_DNSBLBlacklistTest"),
                     "All done"));

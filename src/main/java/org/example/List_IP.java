@@ -5,8 +5,6 @@ import java.util.ArrayList;
 public class List_IP {
     ArrayList<String> score_mail = new ArrayList<>();
     ArrayList<String> multirbl_mail = new ArrayList<>();
-    int num = 0;
-    int numM = 0;
 
     public List_IP() {
         score_mail.add("https://senderscore.org/assess/get-your-score/report/?lookup=92.204.184.130&authenticated=true");
@@ -51,7 +49,6 @@ public class List_IP {
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.184.141.html");
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.184.142.html");
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.250.98.html");
-        multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.250.98.html");
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.250.99.html");
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.250.100.html");
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.250.101.html");
@@ -66,11 +63,11 @@ public class List_IP {
         multirbl_mail.add("https://multirbl.valli.org/lookup/92.204.250.110.html");
     }
 
-    public String getnextIPscore(){
-        return score_mail.get(num++);
+    public String getnextIPscore(int num){
+        return score_mail.get(num);
     }
-    public String getnextIPmultirbl(){
-        return multirbl_mail.get(numM++);
+    public String getnextIPmultirbl(int num){
+        return multirbl_mail.get(num);
     }
 }
 
